@@ -1,3 +1,4 @@
+<?php include('db.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,14 @@
     <title>Document</title>
 </head>
 <body>
+    <?php include('pick_movie.php') ?>
     <form action="index.php" method="post">
-        <input type="text" name="pelicula">
+        <select name="pelicula">
+            <option value="">Seleccione una pelicula</option>
+            <?php foreach($movies as $movie){ ?>
+            <option value="<?php echo $movie['nombre'] ?>"><?php echo $movie['nombre'] ?></option>
+            <?php } ?>
+        </select>
         <br>
         <button type="submit" name="buscar" value="Buscar">Buscar</button>
     </form>
