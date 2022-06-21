@@ -10,7 +10,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $r = $db->prepare($q);
         $r->execute();
         $peli = $r->fetch();
-        //var_dump($rr);
+        
+        $queryFecha = 'SELECT anio FROM peliculas WHERE id = :id';
+
+        $resultadoy = $db->prepare($queryFecha);
+        $resultadoy->bindParam(':id', $peli['id']);
+        $resultadoy->execute();
+        $fecha = $resultadoy->fetch();
 
         $queryDirectores = 'select directores.nombre from directores
         inner join directores_peliculas as dp on dp.director_id = directores.id

@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+form{
+    margin: 10px;
+}
+
+.main-container{
+    border-style: solid;
+    display: flex;
+}
+
+.secondary-container{
+    position: relative;
+    margin: 8px;
+}
