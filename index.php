@@ -1,5 +1,6 @@
 <?php include('db.php');?>
 <?php include('read_movies.php') ?>
+<?php include('pick_movie.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
     <?php include('header.php') ?>
     <div class="main-container">
         <div class="pick-movie-container">
-            <?php include('pick_movie.php') ?>
+            
             <form action="index.php" method="post">
                 <select name="pelicula" class="select-movies">
                     <option value="">Seleccione una pelicula</option>

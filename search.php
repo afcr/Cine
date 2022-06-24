@@ -1,8 +1,5 @@
 <?php
-
-
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
         
         $pelicula = isset($_REQUEST['pelicula']) ? $_REQUEST['pelicula'] : '';
         
@@ -37,7 +34,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $resultadoa->execute();
 
         $actores = $resultadoa->fetchAll();
-
-
 }
 ?>
