@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans:ital,wght@0,700;1,100&display=swap');
+
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body{
+    background-color: #f2f2f2;
 }
 
 ul{
@@ -11,12 +19,105 @@ form{
     margin: 10px;
 }
 
-.main-container{
-    border-style: solid;
-    display: flex;
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+.logo a{
+    text-decoration: none;
+    background-color: #262626;
+    color: #f2f2f2;
+    padding-right: 1rem;
 }
 
-.secondary-container{
-    position: relative;
-    margin: 8px;
+.main-container{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    height: fit-content;
+}
+
+.main-search-container{
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+.secondary-search-container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.secondary-search-container h4{
+    background-color: #ffdd4a;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+}
+
+.secondary-search-container li{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+}
+
+.secondary-search-container li:nth-child(even){
+    background-color: lightgray;
+}
+
+.nav-container{
+    display: flex;
+    background-color: #262626;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.logo{
+    font-family: 'Anton', sans-serif;
+    font-size: 1.7rem;
+}
+
+.pick-movie-container{
+    border-style: none;
+    width: 40%;
+}
+
+.select-movies{
+    padding: 0.5rem;
+    margin-bottom: 0.3rem;
+    width: 100%;
+
+}
+
+.search-button{
+    padding: 0.5rem;
+    border-style: none;
+    background-color: #3c6997;
+    color: #f2f2f2;
+    border-radius: 4px;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.read-table{
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.read-table th{
+    background-color: #ffdd4a;
+    padding: 0.7rem;
+    text-align: left;
+}
+
+.read-table td{
+    padding: 0.5rem;
+}
+
+.read-table tr:nth-child(even){
+    background-color: lightgray;    
 }
