@@ -14,7 +14,6 @@
     <?php include('header.php') ?>
     <div class="main-container">
         <div class="pick-movie-container">
-            
             <form action="index.php" method="post">
                 <select name="pelicula" class="select-movies">
                     <option value="">Seleccione una pelicula</option>
@@ -28,7 +27,7 @@
         </div>
 
         <?php include('search.php');?> 
-        <?php if(isset($pelicula)){ ?>
+        <?php if(isset($pelicula) && $pelicula !== ''){ ?>
 
             <div class="main-search-container">
                 <div class="secondary-search-container">
@@ -62,17 +61,26 @@
             </div>
 
         <?php } ?>
-        <?php if(!isset($pelicula)){ ?>
+        <?php if(!isset($pelicula) || $pelicula == ''){ ?>
         <div class="main-search-container">
             <table class="read-table">
                 <tr>
                     <th>Nombre</th>
                     <th>Año</th>
+                    <th></th>
                 </tr>
                 <?php foreach($all_movies as $movies){ ?>
                         <tr>
                             <td><?php echo $movies['nombre'] ?></td>
                             <td><?php echo $movies['anio'] ?></td>
+                            <td>
+                                <a href="edit_movie_form.php?id=<?php echo $movies['id'] ?>" >
+                                    <img src="icons/pen-solid.svg" class="crud-icons">
+                                </a>
+                                <a href="" >
+                                    <img src="icons/trash-can-solid.svg" class="crud-icons">
+                                </a>
+                            </td>
                         </tr>
                 <?php } ?>
             </table>
