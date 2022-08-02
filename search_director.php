@@ -4,11 +4,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $directors = isset($_REQUEST['directors']) ? $_REQUEST['directors'] : '';
 
+    //igual este bloque no es necesario, seguiremos investigando
     $query = 'SELECT id FROM directores WHERE nombre = :nombre';
     $resultado = $db->prepare($query);
     $resultado->bindParam(':nombre', $directors);
     $resultado->execute();
-    $director = $resultado->fetch();
+    $directorId = $resultado->fetch();
 
     $queryPeliculas = 'select peliculas.nombre from peliculas
     inner join directores_peliculas as dp on dp.pelicula_id = peliculas.id 

@@ -1,4 +1,5 @@
 <?php include('db.php') ?>
+<?php include('edit_movie.php') ?>
 <?php include('fill_edit_movie_form.php') ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@
 <body>
     <?php include('header.php') ?>
     <div class="main-container">
-        <form action="edit_movie.php" method="post">
+        <form action="edit_movie_form.php?id=<?php echo $id ?>" method="post">
             <input type="hidden" name="movieId" value="<?php echo $id ?>">
             <input type="text" name="name" value="<?php echo $resultadop['nombre'] ?>">
             <br><br>

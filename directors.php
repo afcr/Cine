@@ -24,21 +24,30 @@
             <button type="submit" name="buscar" class="search-button">Buscar</button>
         </form>
     </div>
-    <?php if(!isset($directors)){ ?>
+    <?php if(!isset($directors) || $directors === ''){ ?>
         <div class="main-search-container">
             <table class="read-table">
                 <tr>
                     <th>Nombre</th>
+                    <th></th>
                 </tr>
                 <?php foreach($all_directors as $director){ ?>
                         <tr>
                             <td><?php echo $director['nombre'] ?></td>
+                            <td>
+                                <a href="edit_director_form.php?id=<?php echo $director['id'] ?>" >
+                                    <img src="icons/pen-solid.svg" class="crud-icons">
+                                </a>
+                                <a href="" >
+                                    <img src="icons/trash-can-solid.svg" class="crud-icons">
+                                </a>
+                            </td>
                         </tr>
                 <?php } ?>
             </table>
         </div>
     <?php } ?>
-    <?php if(isset($directors)){ ?>
+    <?php if(isset($directors) && $directors !== ''){ ?>
         <div class="main-search-container">
             <div class="secondary-search-container">
                 <h4>Director</h4>

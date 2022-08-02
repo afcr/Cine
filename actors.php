@@ -50,10 +50,19 @@
             <table class="read-table">
                 <tr>
                     <th>Nombre</th>
+                    <th></th>
                 </tr>
                 <?php foreach($all_actors as $actor){ ?>
                         <tr>
                             <td><?php echo $actor['nombre'] ?></td>
+                            <td>
+                                <a href="edit_actor_form.php?id=<?php echo $actor['id'] ?>" >
+                                    <img src="icons/pen-solid.svg" class="crud-icons">
+                                </a>
+                                <a href="" >
+                                    <img src="icons/trash-can-solid.svg" class="crud-icons">
+                                </a>
+                            </td>
                         </tr>
                 <?php } ?>
             </table>
